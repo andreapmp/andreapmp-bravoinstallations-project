@@ -1,0 +1,24 @@
+/* Primary NavBar */
+.primary-nav {
+    background-color: #00274d;
+}
+.quote {
+    background-color: rgb(174, 130, 50);
+    color: white;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.quote:hover {
+    background-color: grey;
+    color: white;
+}
+
+/* Secondary NavBar */
+.secondary-nav {
+    background-color: rgb(174, 130, 50);
+    color:white;
+}
+
+.secondary-nav .nav-link {
+    color: white !important; 
+  }

@@ -1,26 +1,47 @@
 import React, { useContext } from "react";
 import { Context } from "../store/appContext";
-import rigoImageUrl from "../../img/rigo-baby.jpg";
+import closetImg from "../../img/closet.jpg";
+import laundryImg from "../../img/laundry.jpg";
+import pantryImg from "../../img/pantry.png";
 import "../../styles/home.css";
 
 export const Home = () => {
 	const { store, actions } = useContext(Context);
 
 	return (
-		<div className="text-center mt-5">
-			<h1>Hello Rigo!!</h1>
-			<p>
-				<img src={rigoImageUrl} />
-			</p>
-			<div className="alert alert-info">
-				{store.message || "Loading message from the backend (make sure your python backend is running)..."}
+		<div className="carousel-container">
+			<div id="carouselExampleRide" className="carousel carousel-dark slide" data-bs-ride="true">
+				<div className="carousel-inner">
+					<div className="carousel-item active" data-bs-interval="4000">
+						<img src={closetImg} className="d-block w-100" alt="..." />
+					</div>
+					<div className="carousel-item" data-bs-interval="4000">
+						<img src={laundryImg} className="d-block w-100" alt="..." />
+					</div>
+					<div className="carousel-item" data-bs-interval="4000">
+						<img src={pantryImg} className="d-block w-100" alt="..." />
+					</div>
+				</div>
+				<button
+					className="carousel-control-prev"
+					type="button"
+					data-bs-target="#carouselExampleRide"
+					data-bs-slide="prev"
+				>
+					<span className="carousel-control-prev-icon" aria-hidden="true" />
+					<span className="visually-hidden">Previous</span>
+				</button>
+				<button
+					className="carousel-control-next"
+					type="button"
+					data-bs-target="#carouselExampleRide"
+					data-bs-slide="next"
+				>
+					<span className="carousel-control-next-icon" aria-hidden="true" />
+					<span className="visually-hidden">Next</span>
+				</button>
 			</div>
-			<p>
-				This boilerplate comes with lots of documentation:{" "}
-				<a href="https://start.4geeksacademy.com/starters/react-flask">
-					Read documentation
-				</a>
-			</p>
+
 		</div>
 	);
 };

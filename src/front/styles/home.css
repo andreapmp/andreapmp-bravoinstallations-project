@@ -1,7 +1,22 @@
-/*
-    home.css: This website contains selectors only used in home.css
+/* Carousel */
+.carousel-container {
+    margin: 0 auto;
+    /* Center the carousel horizontally */
+}
 
-    All pages share the styles on index.css but you should create 
-    one more css for each page that will contain the selected used 
-    on that page only (the ones not reused in other pages).
-*/
+.carousel-container .carousel-item img {
+    height: 400px;
+    /* Set a fixed height */
+    object-fit: cover;
+    /* Ensures the image fits well within the dimensions */
+    width: 100%;
+    /* Maintain responsiveness */
+}
+
+@media (max-width: 768px) {
+
+    /* Adjust the height for smaller screens */
+    .carousel-container .carousel-item img {
+        height: 300px;
+    }
+}

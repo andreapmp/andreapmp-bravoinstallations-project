@@ -1,3 +1,19 @@
 .footer {
-    background-color:#434647;
+    background-color: #343a40;
+}
+
+.connect-title {
+    font-size: 1rem;
+}
+
+/* Media queries for smaller screens */
+@media (max-width: 768px) {
+    .footer .row {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer .btn {
+        margin-bottom: 0.5rem;
+    }
 }

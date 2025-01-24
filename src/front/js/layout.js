@@ -6,6 +6,10 @@ import { BackendURL } from "./component/backendURL";
 import { Home } from "./pages/home";
 import { Demo } from "./pages/demo";
 import { Single } from "./pages/single";
+import { Custom_Spaces } from "./pages/custom_spaces";
+import { About_Us } from "./pages/about_us";
+import { Contact_Us } from "./pages/contact_us";
+import { Get_quote } from "./pages/get_quote";
 import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
@@ -28,6 +32,10 @@ const Layout = () => {
                         <Route element={<Home />} path="/" />
                         <Route element={<Demo />} path="/demo" />
                         <Route element={<Single />} path="/single/:theid" />
+                        <Route element={<Custom_Spaces />} path="/custom_spaces" />
+                        <Route element={<About_Us />} path="/about_us" />
+                        <Route element={<Contact_Us />} path="/contact_us" />
+                        <Route element={<Get_quote />} path="/get_quote" />
                         <Route element={<h1>Not found!</h1>} />
                     </Routes>
                     <Footer />

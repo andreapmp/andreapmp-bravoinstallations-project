@@ -1,4 +1,40 @@
+.quote-form-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    /* Full viewport height */
+    background-color: #f8f9fa;
+}
+
+.quote-form-border {
+    background-color: #000000;
+    padding: 15px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.quote-form-container {
+    background: #ffffff;
+    padding: 30px;
+    /* border-radius: 5px; */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+}
+
 .quoteSubmit {
     background-color: #00274d;
-    color:white
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.quoteSubmit:hover {
+    background-color: #004080;
+    color: white;
+    font-weight: bold;
 }

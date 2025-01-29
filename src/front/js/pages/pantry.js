@@ -1,9 +1,9 @@
 import React from "react";
 
-export const Custom_Spaces = () => {
+export const Pantry = () => {
     return (
         <>
-            <p>Custom Spaces</p>
+            <p>Pantry</p>
         </>
     );
 };

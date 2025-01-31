@@ -22,19 +22,60 @@ export const Get_quote = () => {
 
     const validateForm = () => {
         const newErrors = {};
-        if (!formData.fullName) newErrors.fullName = "Full name is required.";
-        if (!formData.email) newErrors.email = "Email is required.";
-        if (!formData.phone) newErrors.phone = "Phone is required.";
+
+        if (!formData.fullName.trim()) {
+            newErrors.fullName = "Full name is required.";
+        }
+        if (!formData.email.trim()) {
+            newErrors.email = "Email is required.";
+        } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+            newErrors.email = "Invalid email format.";
+        }
+        if (!formData.phone.trim()) {
+            newErrors.phone = "Phone number is required.";
+        } else if (!/^\d{10}$/.test(formData.phone)) {
+            newErrors.phone = "Phone number must be 10 digits.";
+        }
+
         setErrors(newErrors);
-        return Object.keys(newErrors).length === 0;
+
+        return Object.keys(newErrors).length === 0; // Returns true if no errors
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        if (!validateForm()) return;
 
-        console.log("Form submitted:", formData);
-        alert("Thank you! Your quote request has been submitted.");
+        if (!validateForm()) {
+            console.log("Validation failed, form not submitted.");
+            return; // Stop submission if validation fails
+        }
+
+        const googleScriptURL = "https://script.google.com/macros/s/AKfycbzwVQZxzBkkdxZqFgIscFCoJJuB_LNBB-RVpBVBjufozEhD6zO2E8wzt-mwOFcguNNC/exec";
+
+        // Convert form data into URL-encoded format
+        const formParams = new URLSearchParams();
+        formParams.append("fullName", formData.fullName);
+        formParams.append("email", formData.email);
+        formParams.append("phone", formData.phone);
+        formParams.append("message", formData.message);
+
+        console.log("Sending data:", formParams.toString());
+
+        try {
+            const response = await fetch(googleScriptURL, {
+                method: "POST",
+                mode: "no-cors",
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: formParams.toString(),
+            });
+
+            alert("Your request has been sent!");
+            setFormData({ fullName: "", email: "", phone: "", message: "" });
+            setErrors({ fullName: "", email: "", phone: "" }); // Clear errors on success
+        } catch (error) {
+            console.error("Fetch error:", error);
+            alert("There was an error submitting your request. Please try again.");
+        }
     };
 
     return (

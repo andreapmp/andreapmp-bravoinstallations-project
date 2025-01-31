@@ -1,27 +1,55 @@
+/* Wrapper for the form */
 .quote-form-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    /* Full viewport height */
     background-color: #f8f9fa;
 }
 
+/* Border around the form */
 .quote-form-border {
     background-color: #000000;
     padding: 15px;
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
 }
 
+/* Container for the form fields */
 .quote-form-container {
-    /* background-image: url("../img/customCloset.png"); */
     background-color: white;
     padding: 30px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     width: 100%;
     max-width: 600px;
+    border-radius: 8px;
 }
 
+/* Red asterisk for required fields */
+.required {
+    color: red;
+}
+
+/* Style for error messages */
+.error {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+/* Center the form and make it smaller */
+.quote-form {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* Make input fields smaller */
+.form-control {
+    font-size: 14px;
+    padding: 10px;
+    width: 100%;
+}
+
+/* Submit button styles */
 .quoteSubmit {
     background-color: #00274d;
     color: white;
@@ -31,10 +59,16 @@
     font-size: 16px;
     font-weight: bold;
     cursor: pointer;
+    width: 100%;
 }
 
+/* Hover effect for submit button */
 .quoteSubmit:hover {
     background-color: #004080;
     color: white;
-    font-weight: bold;
+}
+
+/* Make the form text centered */
+.text-center {
+    text-align: center;
 }

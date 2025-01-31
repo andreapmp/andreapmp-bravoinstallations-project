@@ -3,11 +3,16 @@ import "../../styles/get_quote.css";
 
 export const Get_quote = () => {
     const [formData, setFormData] = useState({
-        firstName: "",
-        lastName: "",
+        fullName: "",
         email: "",
         phone: "",
         message: "",
+    });
+
+    const [errors, setErrors] = useState({
+        fullName: "",
+        email: "",
+        phone: "",
     });
 
     const handleChange = (e) => {
@@ -15,8 +20,19 @@ export const Get_quote = () => {
         setFormData({ ...formData, [name]: value });
     };
 
+    const validateForm = () => {
+        const newErrors = {};
+        if (!formData.fullName) newErrors.fullName = "Full name is required.";
+        if (!formData.email) newErrors.email = "Email is required.";
+        if (!formData.phone) newErrors.phone = "Phone is required.";
+        setErrors(newErrors);
+        return Object.keys(newErrors).length === 0;
+    };
+
     const handleSubmit = (e) => {
         e.preventDefault();
+        if (!validateForm()) return;
+
         console.log("Form submitted:", formData);
         alert("Thank you! Your quote request has been submitted.");
     };
@@ -28,38 +44,24 @@ export const Get_quote = () => {
                     <h2 className="text-center mb-4">Schedule Your Free Consultation & Custom Design Today!</h2>
                     <form onSubmit={handleSubmit} className="quote-form">
                         <div className="row mb-3">
-                            <div className="col-md-6">
-                                <label htmlFor="firstName" className="form-label">
-                                    First Name
+                            <div className="col-md-12">
+                                <label htmlFor="fullName" className="form-label">
+                                    Full Name <span className="required">*</span>
                                 </label>
                                 <input
                                     type="text"
-                                    id="firstName"
-                                    name="firstName"
+                                    id="fullName"
+                                    name="fullName"
                                     className="form-control"
-                                    value={formData.firstName}
+                                    value={formData.fullName}
                                     onChange={handleChange}
-                                    required
                                 />
-                            </div>
-                            <div className="col-md-6">
-                                <label htmlFor="lastName" className="form-label">
-                                    Last Name
-                                </label>
-                                <input
-                                    type="text"
-                                    id="lastName"
-                                    name="lastName"
-                                    className="form-control"
-                                    value={formData.lastName}
-                                    onChange={handleChange}
-                                    required
-                                />
+                                {errors.fullName && <div className="error">{errors.fullName}</div>}
                             </div>
                         </div>
                         <div className="mb-3">
                             <label htmlFor="email" className="form-label">
-                                Email
+                                Email <span className="required">*</span>
                             </label>
                             <input
                                 type="email"
@@ -68,12 +70,12 @@ export const Get_quote = () => {
                                 className="form-control"
                                 value={formData.email}
                                 onChange={handleChange}
-                                required
                             />
+                            {errors.email && <div className="error">{errors.email}</div>}
                         </div>
                         <div className="mb-3">
                             <label htmlFor="phone" className="form-label">
-                                Phone
+                                Phone <span className="required">*</span>
                             </label>
                             <input
                                 type="tel"
@@ -82,12 +84,12 @@ export const Get_quote = () => {
                                 className="form-control"
                                 value={formData.phone}
                                 onChange={handleChange}
-                                required
                             />
+                            {errors.phone && <div className="error">{errors.phone}</div>}
                         </div>
                         <div className="mb-3">
                             <label htmlFor="message" className="form-label">
-                                Message
+                                Message <span className="text-secondary">(optional)</span>
                             </label>
                             <textarea
                                 id="message"

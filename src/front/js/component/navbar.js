@@ -6,7 +6,7 @@ export const Navbar = () => {
 	useEffect(() => {
 		const dropdowns = document.querySelectorAll(".nav-item.dropdown");
 
-		dropdowns.forEach(dropdown => {
+		dropdowns.forEach((dropdown) => {
 			dropdown.addEventListener("mouseenter", () => {
 				dropdown.querySelector(".dropdown-menu").classList.add("show");
 			});
@@ -17,7 +17,7 @@ export const Navbar = () => {
 		});
 
 		return () => {
-			dropdowns.forEach(dropdown => {
+			dropdowns.forEach((dropdown) => {
 				dropdown.removeEventListener("mouseenter", () => {
 					dropdown.querySelector(".dropdown-menu").classList.add("show");
 				});
@@ -28,23 +28,30 @@ export const Navbar = () => {
 			});
 		};
 	}, []);
-	
+
 	return (
 		<>
 			{/* Primary Navbar */}
 			<nav className="navbar primary-nav">
-				<div className="container">
+				<div className="container d-flex align-items-center justify-content-between">
 					<a className="navbar-brand" href="/">
-						<img
-							src={bravoLogo}
-							alt="BravoLogo"
-							width={70}
-							height={90}
-						/>
+						<img src={bravoLogo} alt="BravoLogo" width={70} height={90} />
 					</a>
-					<a className="quote-button" href="/get_quote">
-						<button className="btn quote me-2" type="button">Get a Free Quote</button>
-					</a>
+					{/* Right-side group: Get Quote Button and Telephone Link */}
+					<div className="d-flex align-items-center">
+						<a className="quote-button" href="/get_quote">
+							<button className="btn quote me-2" type="button">
+								Get a Free Quote
+							</button>
+						</a>
+						<a className="telephone-link" href="tel:+13219463025">
+							<i
+								className="fa-solid fa-phone-flip"
+								style={{ color: "#ffffff", marginRight: "5px" }}
+							></i>
+							+1 (321) 946-3025
+						</a>
+					</div>
 				</div>
 			</nav>
 
@@ -74,22 +81,22 @@ export const Navbar = () => {
 									</a>
 								</li>
 								<li>
-									<a className="dropdown-item" href="garage-design">
+									<a className="dropdown-item" href="/garage-design">
 										Garage
 									</a>
 								</li>
 								<li>
-									<a className="dropdown-item" href="laundry-room-design">
+									<a className="dropdown-item" href="/laundry-room-design">
 										Laundry Room
 									</a>
 								</li>
 								<li>
-									<a className="dropdown-item" href="office-design">
+									<a className="dropdown-item" href="/office-design">
 										Office
 									</a>
 								</li>
 								<li>
-									<a className="dropdown-item" href="pantry-design">
+									<a className="dropdown-item" href="/pantry-design">
 										Pantry
 									</a>
 								</li>

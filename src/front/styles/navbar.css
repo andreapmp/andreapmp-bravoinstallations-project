@@ -3,8 +3,9 @@
     background-color: #00274d;
 }
 
+/* Quote Button (remains unchanged) */
 .quote {
-    background-color: rgb(174, 130, 50);
+    background-color: rgb(191, 134, 28);
     color: white;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
@@ -14,9 +15,31 @@
     color: white;
 }
 
+/* Telephone link styling */
+.telephone-link {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    margin-left: 1rem;
+    /* Adds space between button and phone link */
+    transition: color 0.3s ease;
+}
+
+.telephone-icon {
+    margin-right: 5px;
+    /* Optionally adjust font size or use an icon library */
+}
+
+.telephone-link:hover {
+    color: #cccccc;
+    /* Changes the color on hover; adjust as needed */
+}
+
 /* Secondary NavBar */
 .secondary-nav {
-    background-color: rgb(174, 130, 50);
+    background-color: #ae8232;
     color: white;
 }
 
@@ -24,6 +47,7 @@
     color: white !important;
 }
 
+/* Custom dropdown styling */
 .custom-spaces {
     display: none;
     opacity: 0;

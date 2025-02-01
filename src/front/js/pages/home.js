@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
 import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
-import closetImg from "../../img/closet.jpg";
-import laundryImg from "../../img/laundry.jpg";
-import pantryImg from "../../img/pantry.png";
+import closetImg from "../../img/closet-1.jpeg";
+import officeImg from "../../img/office-1.jpeg";
+import pantryImg from "../../img/pantry-2.jpeg";
 import servicePhoto from "../../img/closet-4.jpeg";
 import warrantyImg from "../../img/warranty.png";
 import "../../styles/home.css";
@@ -21,7 +21,7 @@ export const Home = () => {
 							<img src={closetImg} className="d-block w-100" alt="Closet" />
 						</div>
 						<div className="carousel-item" data-bs-interval="4000">
-							<img src={laundryImg} className="d-block w-100" alt="Laundry" />
+							<img src={officeImg} className="d-block w-100" alt="Office" />
 						</div>
 						<div className="carousel-item" data-bs-interval="4000">
 							<img src={pantryImg} className="d-block w-100" alt="Pantry" />
@@ -79,7 +79,7 @@ export const Home = () => {
 
 			{/* Process Section */}
 			<section className="process-section container mt-5">
-				<h2 className="text-center mb-4">Our Process</h2>
+				<h2 className="text-center mb-4"><span className="text-secondary">OUR</span> PROCESS</h2>
 				<div className="row">
 					<div className="col-md-4 text-center">
 						<h3>Step 1: Consultation</h3>

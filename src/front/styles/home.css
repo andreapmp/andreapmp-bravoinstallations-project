@@ -1,22 +1,124 @@
-/* Carousel */
+/* ================================= */
+/*         Carousel Styles         */
+/* ================================= */
 .carousel-container {
     margin: 0 auto;
-    /* Center the carousel horizontally */
 }
 
 .carousel-container .carousel-item img {
     height: 400px;
-    /* Set a fixed height */
     object-fit: cover;
-    /* Ensures the image fits well within the dimensions */
     width: 100%;
-    /* Maintain responsiveness */
 }
 
 @media (max-width: 768px) {
-
-    /* Adjust the height for smaller screens */
     .carousel-container .carousel-item img {
         height: 300px;
     }
+}
+
+/* ================================= */
+/*    "What We Do" & Quote Section   */
+/* ================================= */
+.what-we-do-quote {
+    margin-top: 50px;
+}
+
+.what-we-do-quote h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    color: #1f5e9c;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.what-we-do-quote .what-we-do {
+    padding: 20px;
+}
+
+.what-we-do-quote .what-we-do p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* ================================= */
+/*      Service Photo / Get Quote    */
+/* ================================= */
+.service-photo-container {
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+    margin: 0 auto;
+}
+
+.service-photo {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.service-photo-container:hover .service-photo {
+    transform: scale(1.1);
+}
+
+.photo-overlay {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.photo-overlay .btn {
+    background-color: rgba(174, 130, 50, 0.5);
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.photo-overlay .btn:hover {
+    background-color: rgb(174, 130, 50);
+}
+
+/* ================================= */
+/*         Process Section           */
+/* ================================= */
+.process-section {
+    margin-top: 50px;
+}
+
+.process-section h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.process-section .col-md-4 {
+    text-align: center;
+    padding: 10px;
+}
+
+.process-section .col-md-4 h3 {
+    margin-bottom: 15px;
+}
+
+.process-section .col-md-4 p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.warrantyImg {
+    height: 200px;
+    width: 200px;
+    display: block;
+    margin: 0 auto;
+    transition: transform 0.3s ease;
+    /* Adds a smooth transition */
+}
+
+.warrantyImg:hover {
+    transform: scale(1.1);
+    /* Scales the image to 110% of its original size on hover */
 }
